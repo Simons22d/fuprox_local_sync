@@ -23,14 +23,12 @@ while True:
                 if data.json():
                     data = data.json()
                     key = data["key_"]
-                    sync = requests.post("http://localhost:1000/sync/init",json={"key":key})
+                    log(key)
+                    sync = requests.post("http://localhost:1000/sync/init", json={"key": key})
                     log("Synced")
             except json.decoder.JSONDecodeError:
                 log("Error!, could not obtain key")
     except requests.exceptions.ConnectionError:
         log("Server not Reachaable...")
 
-    time.sleep(20)
-
-# if __name__ == '__main__':
-#     eventlet.wsgi.server(eventlet.listen(('', 9900)), app)
+    time.sleep(30)
