@@ -31,4 +31,4 @@ while True:
     except requests.exceptions.ConnectionError:
         log("Server not Reachaable...")
 
-    time.sleep(30)
+    time.sleep(300)
